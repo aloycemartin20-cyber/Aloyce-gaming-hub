@@ -1,32 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ALOYCE GAMES HUB</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#080d18;color:#f5f7ff;font-family:Arial,sans-serif}
-header{padding:20px 5%;background:#101a2d;border-bottom:2px solid #168bff}
-.logo{font-size:24px;font-weight:bold;color:#22a5ff}
-nav{margin-top:15px;display:flex;gap:18px;flex-wrap:wrap}
-a{color:#75c5ff;text-decoration:none}
-.hero{padding:55px 6%;background:linear-gradient(120deg,#10284b,#080d18)}
-.hero h1{font-size:38px;margin:8px 0}
-.hero p{color:#c3cee0;line-height:1.6}
-button,.btn{background:#087cf0;color:white;border:0;padding:12px 17px;border-radius:8px;cursor:pointer;display:inline-block}
-input,select{padding:13px;border-radius:8px;border:1px solid #34435c;background:#101a2d;color:white;width:100%;margin:6px 0}
-main{padding:25px 5%}
-.filters{display:grid;grid-template-columns:2fr 1fr;gap:10px;margin:15px 0}
-.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#111b2c;border:1px solid #253751;border-radius:12px;overflow:hidden}
-.cover{height:145px;background:linear-gradient(135deg,#123d69,#15162b);display:grid;place-items:center;font-size:22px;font-weight:bold;text-align:center;padding:12px}
-.info{padding:15px}
-.info p{color:#bac7da;line-height:1.5}
-.tag{color:#50b4ff;font-size:13px}
-footer{padding:25px;text-align:center;background:#101a2d;color:#b9c5d8;margin-top:30px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ALOYCE GAMES HUB</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;background:#080d18;color:#f5f7ff;font-family:Arial,sans-serif}
+    header{padding:20px 5%;background:#101a2d;border-bottom:2px solid #168bff}
+    .logo{font-size:24px;font-weight:bold;color:#22a5ff}
+    nav{margin-top:15px;display:flex;gap:18px;flex-wrap:wrap}
+    a{color:#75c5ff;text-decoration:none}
+    .hero{padding:55px 6%;background:linear-gradient(120deg,#10284b,#080d18)}
+    .hero h1{font-size:38px;margin:8px 0}
+    .hero p{color:#c3cee0;line-height:1.6}
+    button,.btn{background:#087cf0;color:white;border:0;padding:12px 17px;border-radius:8px;cursor:pointer;display:inline-block}
+    input,select{padding:13px;border-radius:8px;border:1px solid #34435c;background:#101a2d;color:white;width:100%;margin:6px 0}
+    main{padding:25px 5%}
+    .filters{display:grid;grid-template-columns:2fr 1fr;gap:10px;margin:15px 0}
+    .games{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card{background:#111b2c;border:1px solid #253751;border-radius:12px;overflow:hidden}
+    .cover{height:145px;background:linear-gradient(135deg,#123d69,#15162b);display:grid;place-items:center;font-size:22px;font-weight:bold;text-align:center;padding:12px}
+    .info{padding:15px}
+    .info p{color:#bac7da;line-height:1.5}
+    .tag{color:#50b4ff;font-size:13px}
+    footer{padding:25px;text-align:center;background:#101a2d;color:#b9c5d8;margin-top:30px}
+  </style>
 </head>
 <body>
 <header>
@@ -36,6 +35,7 @@ footer{padding:25px;text-align:center;background:#101a2d;color:#b9c5d8;margin-to
     <a href="#games">Games</a>
     <a href="#news">Gaming News</a>
     <a href="#about">About Us</a>
+    <a href="admin.html">Admin Panel</a>
   </nav>
 </header>
 
@@ -74,34 +74,33 @@ footer{padding:25px;text-align:center;background:#101a2d;color:#b9c5d8;margin-to
 
 <script>
 const games = [
- {name:"Grand Theft Auto V",platform:"PC",category:"Open World",url:"https://www.rockstargames.com/gta-v"},
- {name:"Bully",platform:"PC",category:"Adventure",url:"https://www.rockstargames.com/games"},
- {name:"NBA 2K",platform:"PC",category:"Sports",url:"https://nba.2k.com/"},
- {name:"Godot Engine",platform:"PC",category:"Free Game Tools",url:"https://godotengine.org/"},
- {name:"SuperTuxKart",platform:"PC",category:"Racing",url:"https://supertuxkart.net/"},
- {name:"0 A.D.",platform:"PC",category:"Strategy",url:"https://play0ad.com/"}
+  {name:"Grand Theft Auto V",platform:"PC",category:"Open World",url:"https://www.rockstargames.com/gta-v"},
+  {name:"Bully",platform:"PC",category:"Adventure",url:"https://www.rockstargames.com/games"},
+  {name:"NBA 2K",platform:"PC",category:"Sports",url:"https://nba.2k.com/"},
+  {name:"Godot Engine",platform:"PC",category:"Free Game Tools",url:"https://godotengine.org/"},
+  {name:"SuperTuxKart",platform:"PC",category:"Racing",url:"https://supertuxkart.net/"},
+  {name:"0 A.D.",platform:"PC",category:"Strategy",url:"https://play0ad.com/"}
 ];
 
 function renderGames(){
- const q=document.getElementById('search').value.toLowerCase();
- const p=document.getElementById('platform').value;
- const list=games.filter(g=>
-  g.name.toLowerCase().includes(q) &&
-  (p==="All" || g.platform===p)
- );
- document.getElementById('gameList').innerHTML=list.map(g=>`
- <article class="card">
-   <div class="cover">🎮 ${g.name}</div>
-   <div class="info">
-     <div class="tag">${g.platform} · ${g.category}</div>
-     <h3>${g.name}</h3>
-     <p>Angalia taarifa na chanzo rasmi cha mchezo huu.</p>
-     <a class="btn" href="${g.url}" target="_blank" rel="noopener">Official Website ↗</a>
-   </div>
- </article>`).join('') || '<p>Hakuna game iliyopatikana.</p>';
+  const q=document.getElementById('search').value.toLowerCase();
+  const p=document.getElementById('platform').value;
+  const list=games.filter(g=>
+    g.name.toLowerCase().includes(q) &&
+    (p==="All" || g.platform===p)
+  );
+  document.getElementById('gameList').innerHTML=list.map(g=>`
+  <article class="card">
+    <div class="cover">🎮 ${g.name}</div>
+    <div class="info">
+      <div class="tag">${g.platform} · ${g.category}</div>
+      <h3>${g.name}</h3>
+      <p>Angalia taarifa na chanzo rasmi cha mchezo huu.</p>
+      <a class="btn" href="${g.url}" target="_blank" rel="noopener">Official Website ↗</a>
+    </div>
+  </article>`).join('') || '<p>Hakuna game iliyopatikana.</p>';
 }
 renderGames();
 </script>
 </body>
-  </html>
-  
+</html>
