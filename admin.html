@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Panel - Aloyce Gaming Hub</title>
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+  <header>
+    <h1>Aloyce Gaming Hub — Admin Panel</h1>
+  </header>
+
+  <main>
+    <section id="login-section">
+      <h2>Admin Login</h2>
+      <form id="login-form" onsubmit="return false;">
+        <label for="username">Username</label>
+        <input id="username" type="text" autocomplete="username" required>
+
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" required>
+
+        <button id="login-btn" type="button">Sign in</button>
+        <p id="login-error" role="alert" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="dashboard" hidden>
+      <nav>
+        <button id="logout-btn">Log out</button>
+      </nav>
+
+      <h2>Dashboard</h2>
+
+      <div class="card">
+        <h3>Site stats</h3>
+        <ul>
+          <li>Total users: <span id="stat-users">—</span></li>
+          <li>Active games: <span id="stat-games">—</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Quick actions</h3>
+        <button id="clear-cache">Clear cache</button>
+        <button id="refresh-stats">Refresh stats</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
