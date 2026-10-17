@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Login - Aloyce Gaming Hub</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Aloyce Gaming Hub — Login</h1>
+
+    <form id="login-form" class="card">
+      <label for="username">Username</label>
+      <input id="username" name="username" required autocomplete="username">
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" required autocomplete="current-password">
+
+      <button type="submit" class="btn">Log in</button>
+      <p class="muted">No account? <a href="signup.html">Create one</a></p>
+      <p id="error" class="error" role="alert" aria-live="assertive"></p>
+    </form>
+  </main>
+
+  <script src="assets/auth.js"></script>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const u = document.getElementById('username').value.trim();
+      const p = document.getElementById('password').value;
+      const result = await loginUser(u, p);
+      const err = document.getElementById('error');
+      if (result.success) {
+        window.location.href = 'dashboard.html';
+      } else {
+        err.textContent = result.message;
+      }
+    });
+  </script>
+</body>
+</html>
