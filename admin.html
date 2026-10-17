@@ -16,35 +16,41 @@
       <h2>Admin Login</h2>
       <form id="login-form" onsubmit="return false;">
         <label for="username">Username</label>
-        <input id="username" type="text" autocomplete="username" required>
+        <input id="username" type="text" autocomplete="username" placeholder="aloycegamer206@gmail.com" required>
 
         <label for="password">Password</label>
-        <input id="password" type="password" autocomplete="current-password" required>
+        <input id="password" type="password" autocomplete="current-password" placeholder="admin123" required>
 
-        <button id="login-btn" type="button">Sign in</button>
+        <button id="login-btn" type="submit">Sign in</button>
         <p id="login-error" role="alert" aria-live="polite"></p>
       </form>
     </section>
 
     <section id="dashboard" hidden>
       <nav>
-        <button id="logout-btn">Log out</button>
+        <button id="logout-btn" type="button">Log out</button>
       </nav>
 
-      <h2>Dashboard</h2>
-
-      <div class="card">
-        <h3>Site stats</h3>
-        <ul>
-          <li>Total users: <span id="stat-users">—</span></li>
-          <li>Active games: <span id="stat-games">—</span></li>
-        </ul>
+      <div>
+        <h2>Dashboard</h2>
       </div>
 
-      <div class="card">
-        <h3>Quick actions</h3>
-        <button id="clear-cache">Clear cache</button>
-        <button id="refresh-stats">Refresh stats</button>
+      <div class="dashboard-grid">
+        <div class="card">
+          <h3>Site stats</h3>
+          <ul>
+            <li>Total users: <span id="stat-users">—</span></li>
+            <li>Active games: <span id="stat-games">—</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Quick actions</h3>
+          <div class="quick-actions">
+            <button id="clear-cache" type="button">Clear cache</button>
+            <button id="refresh-stats" type="button">Refresh stats</button>
+          </div>
+        </div>
       </div>
     </section>
   </main>
